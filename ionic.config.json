@@ -1,0 +1,7 @@
+{
+  "name": "safajobsionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
