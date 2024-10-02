@@ -1,14 +1,24 @@
-import { Component, OnInit } from '@angular/core';
-import {IonicModule} from "@ionic/angular";
+import {Component, OnInit} from '@angular/core';
 import {
   IonButtons,
+  IonCol,
   IonContent,
-  IonHeader, IonImg, IonItem,
+  IonHeader,
+  IonIcon,
+  IonImg,
+  IonItem,
   IonList,
   IonMenu,
-  IonMenuButton, IonRouterOutlet, IonTitle,
+  IonMenuButton,
+  IonRouterOutlet,
+  IonRow,
+  IonTitle,
   IonToolbar
 } from "@ionic/angular/standalone";
+import {addIcons} from "ionicons";
+import {gridOutline, logoIonic, menuOutline} from "ionicons/icons";
+import {RouterModule} from "@angular/router";
+import {IonicModule} from "@ionic/angular";
 
 @Component({
   selector: 'app-navbar',
@@ -16,22 +26,15 @@ import {
   styleUrls: ['./navbar.component.scss'],
   standalone: true,
   imports: [
-    IonHeader,
-    IonToolbar,
-    IonButtons,
-    IonMenuButton,
-    IonMenu,
-    IonContent,
-    IonList,
-    IonItem,
-    IonRouterOutlet,
-    IonTitle,
-    IonImg
+    IonicModule,
+    RouterModule
   ]
 })
 export class NavbarComponent  implements OnInit {
 
-  constructor() { }
+  constructor() {
+    addIcons({menuOutline, gridOutline})
+  }
 
   ngOnInit() {}
 

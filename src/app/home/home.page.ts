@@ -17,6 +17,7 @@ import {
   IonItemOption
 } from '@ionic/angular/standalone';
 import {NavbarComponent} from "../navbar/navbar.component";
+import {PublicacionesComponent} from "../publicaciones/publicaciones.component";
 
 @Component({
   selector: 'app-home',
@@ -28,7 +29,7 @@ import {NavbarComponent} from "../navbar/navbar.component";
     IonCardHeader, IonCardTitle,
     IonCardSubtitle, IonCardContent, IonList,
     IonItemSliding, IonItem, IonItemOptions,
-    IonLabel, IonItemOption, NavbarComponent],
+    IonLabel, IonItemOption, NavbarComponent, PublicacionesComponent],
 })
 export class HomePage {
   constructor() {}

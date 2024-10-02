@@ -35,3 +35,16 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+
+
+
+ion-content {
+  --padding-top: 60px; /* Ajusta este valor según la altura de tu navbar */
+}
+
+.centrar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
