@@ -10,8 +10,7 @@ import {RouterModule} from "@angular/router";
   styleUrls: ['./menu-inferior.component.scss'],
   standalone: true,
   imports: [
-    IonicModule,
-    RouterModule
+    IonicModule,RouterModule
   ]
 })
 export class MenuInferiorComponent  implements OnInit {

@@ -16,7 +16,7 @@ import {
   IonToolbar
 } from "@ionic/angular/standalone";
 import {addIcons} from "ionicons";
-import {gridOutline, logoIonic, menuOutline} from "ionicons/icons";
+import {briefcaseOutline, gridOutline, logoIonic, menuOutline} from "ionicons/icons";
 import {RouterModule} from "@angular/router";
 import {IonicModule} from "@ionic/angular";
 
@@ -33,7 +33,7 @@ import {IonicModule} from "@ionic/angular";
 export class NavbarComponent  implements OnInit {
 
   constructor() {
-    addIcons({menuOutline, gridOutline})
+    addIcons({menuOutline, gridOutline, briefcaseOutline})
   }
 
   ngOnInit() {}

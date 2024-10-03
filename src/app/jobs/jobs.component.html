@@ -1,0 +1,115 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-searchbar color="light" placeholder="Busca algo..."></ion-searchbar>
+      </ion-col>
+      <ion-col class="centrar">
+        <ion-label style="color: #0e6a95">Provincia</ion-label>
+        <ion-select aria-label="Selecciona" value="" style="padding-left: 15px">
+          <ion-select-option value="apple">Todas</ion-select-option>
+          <ion-select-option value="banana">Sevilla</ion-select-option>
+          <ion-select-option value="orange">Málaga</ion-select-option>
+          <ion-select-option value="orange">Madrid</ion-select-option>
+        </ion-select>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+      <ion-card (click)="mostrarContenido()" class="full-width-card">
+        <ion-card-content>
+          <ion-item lines="none">
+            <ion-avatar>
+              <ion-img
+                src="https://upload.wikimedia.org/wikipedia/commons/6/63/Logo_Colegio_sin_fondo.png"></ion-img>
+            </ion-avatar>
+            <ion-text style="padding-left: 10px">
+              <b> Silph SA</b>
+              <br>
+              Multiplatform Developer
+              <br>
+              15000-22000
+            </ion-text>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+
+    </ion-row>
+
+    <!-- Contenido oculto -->
+    <ion-row *ngIf="isContentVisible">
+      <ion-card>
+        <ion-card-content>
+          <b><u>Acerca del empleo</u></b>
+          <br>
+          ¿Te gustaría trabajar con la última tecnología dentro del sector automoción?
+          Bertrandt AG España es una empresa multinacional alemana innovadora que aporta soluciones de ingeniería en el
+          sector automoción.
+          El trabajo en equipo es el combustible que nos lleva a la excelencia, trabajando codo con codo con el cliente.
+          Somos personas que compartimos una misma pasión ¿Quieres sumarte a nuestro equipo?
+          <br>
+          <b>Tu rol</b>: Desarrollarás software para diferentes funcionalidades de ADAS, en un gran fabricante del
+          sector de automoción.
+          <br>
+
+          <br>
+          <b>Estas serán tus funciones principales:</b>
+
+          <ul>
+            <li>Diseñar la nueva funcionalidad en Matlab/Simulink o C</li>
+            <li>Crear o actualizar los escenarios de validación</li>
+            <li>Analizar los resultados de la simulación y notificar anomalías</li>
+            <li>También tendrás la función de contribuir al desarrollo técnico en este ámbito.</li>
+          </ul>
+
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+
+
+    <ion-row>
+      <ion-card  class="full-width-card">
+        <ion-card-content>
+          <ion-item lines="none">
+            <ion-avatar>
+              <ion-img
+                src="https://gestionpyme.com/wp-content/uploads/2015/09/shutterstock_227788621.jpg"></ion-img>
+            </ion-avatar>
+            <ion-text style="padding-left: 10px">
+              <b> Silph SA</b>
+              <br>
+              Multiplatform Developer
+              <br>
+              15000-22000
+            </ion-text>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+
+    </ion-row>
+
+
+    <ion-row>
+      <ion-card class="full-width-card">
+        <ion-card-content>
+          <ion-item lines="none">
+            <ion-avatar>
+              <ion-img
+                src="https://img.freepik.com/vector-gratis/logo-abstracto-cuadrados-redondeados_1043-52.jpg"></ion-img>
+            </ion-avatar>
+            <ion-text style="padding-left: 10px">
+              <b> Silph SA</b>
+              <br>
+              Multiplatform Developer
+              <br>
+              15000-22000
+            </ion-text>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+
+    </ion-row>
+
+  </ion-grid>
+</ion-content>
