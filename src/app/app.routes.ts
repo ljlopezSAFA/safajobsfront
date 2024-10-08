@@ -6,6 +6,7 @@ import {PerfilComponent} from "./perfil/perfil.component";
 import {ChatComponent} from "./chat/chat.component";
 import {PersonalChatComponent} from "./personal-chat/personal-chat.component";
 import {JobsComponent} from "./jobs/jobs.component";
+import {BuscadorPerfilesComponent} from "./buscador-perfiles/buscador-perfiles.component";
 
 export const routes: Routes = [
 
@@ -16,5 +17,6 @@ export const routes: Routes = [
   {path: 'perfil', component: PerfilComponent,},
   {path: 'chats', component: ChatComponent,},
   {path: 'personalchat', component: PersonalChatComponent,},
-  {path: 'jobs', component: JobsComponent,}
+  {path: 'jobs', component: JobsComponent,},
+  {path: 'buscador-perfiles', component: BuscadorPerfilesComponent,},
 ];

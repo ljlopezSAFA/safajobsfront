@@ -1,22 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {
-  IonButtons,
-  IonCol,
-  IonContent,
-  IonHeader,
-  IonIcon,
-  IonImg,
-  IonItem,
-  IonList,
-  IonMenu,
-  IonMenuButton,
-  IonRouterOutlet,
-  IonRow,
-  IonTitle,
-  IonToolbar
-} from "@ionic/angular/standalone";
 import {addIcons} from "ionicons";
-import {briefcaseOutline, gridOutline, logoIonic, menuOutline} from "ionicons/icons";
+import {briefcaseOutline, gridOutline, menuOutline, peopleOutline} from "ionicons/icons";
 import {RouterModule} from "@angular/router";
 import {IonicModule} from "@ionic/angular";
 
@@ -33,7 +17,7 @@ import {IonicModule} from "@ionic/angular";
 export class NavbarComponent  implements OnInit {
 
   constructor() {
-    addIcons({menuOutline, gridOutline, briefcaseOutline})
+    addIcons({menuOutline, gridOutline, briefcaseOutline, peopleOutline})
   }
 
   ngOnInit() {}
