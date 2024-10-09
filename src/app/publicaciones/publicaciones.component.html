@@ -1,6 +1,11 @@
 
 
 <ion-grid >
+  <ion-row class="centrar" style="margin-top:20px">
+    <ion-button color="principal" id="open-modal" expand="block">Nueva Publicación</ion-button>
+  </ion-row>
+
+
   <ion-row  style="display: flex; justify-content: center; align-items: center;">
     <ion-col size="10">
       <ion-card>
@@ -88,6 +93,44 @@
     </ion-col>
 
   </ion-row>
+
+
+
+  <ion-modal #modal trigger="open-modal">
+    <ng-template>
+      <ion-content class="modal">
+        <ion-toolbar>
+          <ion-title>Nueva Publicación</ion-title>
+          <ion-buttons slot="end">
+            <ion-button color="blanco" (click)="modal.dismiss()">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+        <ion-list>
+          <ion-item lines="none">
+            <ion-input labelPlacement="stacked" label="Email" placeholder="email@domain.com">
+              <ion-icon slot="start" name="lock-closed" aria-hidden="true"></ion-icon>
+              <ion-button fill="clear" slot="end" aria-label="Show/hide">
+                <ion-icon slot="icon-only" name="eye" aria-hidden="true" color="principal"></ion-icon>
+              </ion-button>
+            </ion-input>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-input label="Título" placeholder="Título de tu publicación..."></ion-input>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-input label="Título" type="text" placeholder="Título de tu publicación..."></ion-input>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-textarea label="Cuerpo de la publicación" labelPlacement="floating" placeholder="Escribe algo..."></ion-textarea>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+
+
+
 
 
 </ion-grid>

@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {IonicModule} from "@ionic/angular";
+import {addIcons} from "ionicons";
+import {eye} from "ionicons/icons";
 
 @Component({
   selector: 'app-publicaciones',
@@ -12,7 +14,9 @@ import {IonicModule} from "@ionic/angular";
 })
 export class PublicacionesComponent  implements OnInit {
 
-  constructor() { }
+  constructor() {
+    addIcons({eye})
+  }
 
   ngOnInit() {}
 

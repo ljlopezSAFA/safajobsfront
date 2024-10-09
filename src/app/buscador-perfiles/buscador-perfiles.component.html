@@ -7,75 +7,29 @@
     </ion-row>
     <br>
     <ion-row class="centrar">
-      <ion-searchbar color="light" placeholder="Busca algo..."></ion-searchbar>
+      <ion-searchbar color="light" placeholder="Busca algo..." (ionInput)="buscarPerfiles($event)"></ion-searchbar>
     </ion-row>
 
 
     <ion-row>
-      <ion-col>
+      <ion-col size="4" *ngFor="let perfil of perfiles">
         <ion-card class="full-width-card">
           <ion-row class="centrar"
-                   style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRg99LWaEaPhtsynteBZDoYc_IJkONn6QNvA&s')">
-            <ion-avatar style="width: 80px; height: 80px; border: 2px solid #0e6a95">
-              <ion-img src="https://picsum.photos/80/80?random=40">
+                   style="background-color:#0e6a95">
+            <ion-avatar style="width: 80px; height: 80px; border: 2px solid #0e6a95; background-color:#ffffff">
+              <ion-img src="{{perfil.foto}}">
               </ion-img>
             </ion-avatar>
           </ion-row>
           <ion-row class="centrar">
             <ion-card-header class="centrar">
-              <ion-card-title style="color: #0e6a95; font-size: 15pt">Manuel Martín</ion-card-title>
+              <ion-card-title style="color: #0e6a95; font-size: 9pt">{{perfil.nombre}}<br>{{perfil.apellidos}}</ion-card-title>
             </ion-card-header>
           </ion-row>
           <ion-row class="centrar" style="margin-top: -20px">
             <ion-card-content class="centrar">
-              <ion-text style="color: #0e6a95">
-                Esta es la descripción de un perfil
-              </ion-text>
-            </ion-card-content>
-          </ion-row>
-        </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card class="full-width-card">
-          <ion-row class="centrar"
-                   style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRg99LWaEaPhtsynteBZDoYc_IJkONn6QNvA&s')">
-            <ion-avatar style="width: 80px; height: 80px; border: 2px solid #0e6a95">
-              <ion-img src="https://picsum.photos/80/80?random=90">
-              </ion-img>
-            </ion-avatar>
-          </ion-row>
-          <ion-row class="centrar">
-            <ion-card-header class="centrar">
-              <ion-card-title style="color: #0e6a95; font-size: 15pt;">Antonio Canto</ion-card-title>
-            </ion-card-header>
-          </ion-row>
-          <ion-row class="centrar" style="margin-top: -20px">
-            <ion-card-content class="centrar">
-              <ion-text style="color: #0e6a95">
-                Esta es la descripción de un perfil
-              </ion-text>
-            </ion-card-content>
-          </ion-row>
-        </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card class="full-width-card">
-          <ion-row class="centrar"
-                   style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRg99LWaEaPhtsynteBZDoYc_IJkONn6QNvA&s')">
-            <ion-avatar style="width: 80px; height: 80px; border: 2px solid #0e6a95">
-              <ion-img src="https://picsum.photos/80/80?random=80">
-              </ion-img>
-            </ion-avatar>
-          </ion-row>
-          <ion-row class="centrar">
-            <ion-card-header class="centrar">
-              <ion-card-title style="color: #0e6a95">Enrique López</ion-card-title>
-            </ion-card-header>
-          </ion-row>
-          <ion-row class="centrar" style="margin-top: -20px">
-            <ion-card-content class="centrar">
-              <ion-text style="color: #0e6a95">
-                Esta es la descripción de un perfil
+              <ion-text style="color: #0e6a95; font-size: 6pt;">
+                {{perfil.mail}}
               </ion-text>
             </ion-card-content>
           </ion-row>
@@ -83,223 +37,6 @@
       </ion-col>
     </ion-row>
 
-
-    <ion-row>
-      <ion-col>
-        <ion-card class="full-width-card">
-          <ion-row class="centrar"
-                   style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRg99LWaEaPhtsynteBZDoYc_IJkONn6QNvA&s')">
-            <ion-avatar style="width: 80px; height: 80px; border: 2px solid #0e6a95">
-              <ion-img src="https://picsum.photos/80/80?random=41">
-              </ion-img>
-            </ion-avatar>
-          </ion-row>
-          <ion-row class="centrar">
-            <ion-card-header class="centrar">
-              <ion-card-title style="color: #0e6a95">Perfil 1</ion-card-title>
-            </ion-card-header>
-          </ion-row>
-          <ion-row class="centrar" style="margin-top: -20px">
-            <ion-card-content class="centrar">
-              <ion-text style="color: #0e6a95">
-                Esta es la descripción de un perfil
-              </ion-text>
-            </ion-card-content>
-          </ion-row>
-        </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card class="full-width-card">
-          <ion-row class="centrar"
-                   style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRg99LWaEaPhtsynteBZDoYc_IJkONn6QNvA&s')">
-            <ion-avatar style="width: 80px; height: 80px; border: 2px solid #0e6a95">
-              <ion-img src="https://picsum.photos/80/80?random=91">
-              </ion-img>
-            </ion-avatar>
-          </ion-row>
-          <ion-row class="centrar">
-            <ion-card-header class="centrar">
-              <ion-card-title style="color: #0e6a95">Perfil 1</ion-card-title>
-            </ion-card-header>
-          </ion-row>
-          <ion-row class="centrar" style="margin-top: -20px">
-            <ion-card-content class="centrar">
-              <ion-text style="color: #0e6a95">
-                Esta es la descripción de un perfil
-              </ion-text>
-            </ion-card-content>
-          </ion-row>
-        </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card class="full-width-card">
-          <ion-row class="centrar"
-                   style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRg99LWaEaPhtsynteBZDoYc_IJkONn6QNvA&s')">
-            <ion-avatar style="width: 80px; height: 80px; border: 2px solid #0e6a95">
-              <ion-img src="https://picsum.photos/80/80?random=81">
-              </ion-img>
-            </ion-avatar>
-          </ion-row>
-          <ion-row class="centrar">
-            <ion-card-header class="centrar">
-              <ion-card-title style="color: #0e6a95">Perfil 1</ion-card-title>
-            </ion-card-header>
-          </ion-row>
-          <ion-row class="centrar" style="margin-top: -20px">
-            <ion-card-content class="centrar">
-              <ion-text style="color: #0e6a95">
-                Esta es la descripción de un perfil
-              </ion-text>
-            </ion-card-content>
-          </ion-row>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-
-
-    <ion-row>
-      <ion-col>
-        <ion-card class="full-width-card">
-          <ion-row class="centrar"
-                   style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRg99LWaEaPhtsynteBZDoYc_IJkONn6QNvA&s')">
-            <ion-avatar style="width: 80px; height: 80px; border: 2px solid #0e6a95">
-              <ion-img src="https://picsum.photos/80/80?random=42">
-              </ion-img>
-            </ion-avatar>
-          </ion-row>
-          <ion-row class="centrar">
-            <ion-card-header class="centrar">
-              <ion-card-title style="color: #0e6a95">Perfil 1</ion-card-title>
-            </ion-card-header>
-          </ion-row>
-          <ion-row class="centrar" style="margin-top: -20px">
-            <ion-card-content class="centrar">
-              <ion-text style="color: #0e6a95">
-                Esta es la descripción de un perfil
-              </ion-text>
-            </ion-card-content>
-          </ion-row>
-        </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card class="full-width-card">
-          <ion-row class="centrar"
-                   style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRg99LWaEaPhtsynteBZDoYc_IJkONn6QNvA&s')">
-            <ion-avatar style="width: 80px; height: 80px; border: 2px solid #0e6a95">
-              <ion-img src="https://picsum.photos/80/80?random=92">
-              </ion-img>
-            </ion-avatar>
-          </ion-row>
-          <ion-row class="centrar">
-            <ion-card-header class="centrar">
-              <ion-card-title style="color: #0e6a95">Perfil 1</ion-card-title>
-            </ion-card-header>
-          </ion-row>
-          <ion-row class="centrar" style="margin-top: -20px">
-            <ion-card-content class="centrar">
-              <ion-text style="color: #0e6a95">
-                Esta es la descripción de un perfil
-              </ion-text>
-            </ion-card-content>
-          </ion-row>
-        </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card class="full-width-card">
-          <ion-row class="centrar"
-                   style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRg99LWaEaPhtsynteBZDoYc_IJkONn6QNvA&s')">
-            <ion-avatar style="width: 80px; height: 80px; border: 2px solid #0e6a95">
-              <ion-img src="https://picsum.photos/80/80?random=82">
-              </ion-img>
-            </ion-avatar>
-          </ion-row>
-          <ion-row class="centrar">
-            <ion-card-header class="centrar">
-              <ion-card-title style="color: #0e6a95">Perfil 1</ion-card-title>
-            </ion-card-header>
-          </ion-row>
-          <ion-row class="centrar" style="margin-top: -20px">
-            <ion-card-content class="centrar">
-              <ion-text style="color: #0e6a95">
-                Esta es la descripción de un perfil
-              </ion-text>
-            </ion-card-content>
-          </ion-row>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col>
-        <ion-card class="full-width-card">
-          <ion-row class="centrar"
-                   style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRg99LWaEaPhtsynteBZDoYc_IJkONn6QNvA&s')">
-            <ion-avatar style="width: 80px; height: 80px; border: 2px solid #0e6a95">
-              <ion-img src="https://picsum.photos/80/80?random=43">
-              </ion-img>
-            </ion-avatar>
-          </ion-row>
-          <ion-row class="centrar">
-            <ion-card-header class="centrar">
-              <ion-card-title style="color: #0e6a95">Perfil 1</ion-card-title>
-            </ion-card-header>
-          </ion-row>
-          <ion-row class="centrar" style="margin-top: -20px">
-            <ion-card-content class="centrar">
-              <ion-text style="color: #0e6a95">
-                Esta es la descripción de un perfil
-              </ion-text>
-            </ion-card-content>
-          </ion-row>
-        </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card class="full-width-card">
-          <ion-row class="centrar"
-                   style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRg99LWaEaPhtsynteBZDoYc_IJkONn6QNvA&s')">
-            <ion-avatar style="width: 80px; height: 80px; border: 2px solid #0e6a95">
-              <ion-img src="https://picsum.photos/80/80?random=93">
-              </ion-img>
-            </ion-avatar>
-          </ion-row>
-          <ion-row class="centrar">
-            <ion-card-header class="centrar">
-              <ion-card-title style="color: #0e6a95">Perfil 1</ion-card-title>
-            </ion-card-header>
-          </ion-row>
-          <ion-row class="centrar" style="margin-top: -20px">
-            <ion-card-content class="centrar">
-              <ion-text style="color: #0e6a95">
-                Esta es la descripción de un perfil
-              </ion-text>
-            </ion-card-content>
-          </ion-row>
-        </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card class="full-width-card">
-          <ion-row class="centrar"
-                   style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRg99LWaEaPhtsynteBZDoYc_IJkONn6QNvA&s')">
-            <ion-avatar style="width: 80px; height: 80px; border: 2px solid #0e6a95">
-              <ion-img src="https://picsum.photos/80/80?random=83">
-              </ion-img>
-            </ion-avatar>
-          </ion-row>
-          <ion-row class="centrar">
-            <ion-card-header class="centrar">
-              <ion-card-title style="color: #0e6a95">Perfil 1</ion-card-title>
-            </ion-card-header>
-          </ion-row>
-          <ion-row class="centrar" style="margin-top: -20px">
-            <ion-card-content class="centrar">
-              <ion-text style="color: #0e6a95">
-                Esta es la descripción de un perfil
-              </ion-text>
-            </ion-card-content>
-          </ion-row>
-        </ion-card>
-      </ion-col>
-    </ion-row>
 
 
   </ion-grid>
