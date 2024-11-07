@@ -41,7 +41,6 @@
 
 ion-content {
   --padding-top: 70px; /* Ajusta este valor según la altura de tu navbar */
-  --padding-bottom: 100px;
   --keyboard-offset: none !important;
 }
 
@@ -138,4 +137,7 @@ ion-col{
   --ion-color-tint: var(--ion-color-blanco-tint);
 }
 
+.custom-outlet {
+  height: calc(100vh - 60px); /* 100% de la ventana menos 60px */
+}
 

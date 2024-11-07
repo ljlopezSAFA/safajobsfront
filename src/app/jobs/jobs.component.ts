@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {IonicModule} from "@ionic/angular";
-import {NgIf} from "@angular/common";
+import {CommonModule, NgIf} from "@angular/common";
+import {OfertaEmpleoService} from "../services/oferta.empleo.service";
+import {OfertaEmpleo} from "../modelos/OfertaEmpleo";
 
 @Component({
   selector: 'app-jobs',
@@ -9,21 +11,40 @@ import {NgIf} from "@angular/common";
   standalone: true,
   imports: [
     IonicModule,
-    NgIf
+    CommonModule,
   ]
 })
-export class JobsComponent  implements OnInit {
-  isContentVisible = false;
+export class JobsComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {}
+  ofertasEmpleo: OfertaEmpleo[] = []
 
 
-
-
-  mostrarContenido() {
-    this.isContentVisible = !this.isContentVisible;
+  constructor(private ofertaEmpleoService: OfertaEmpleoService) {
   }
+
+  ngOnInit() {
+    this.obtenerOfertasEmpleo();
+  }
+
+
+  obtenerOfertasEmpleo(): void {
+    this.ofertaEmpleoService.getOfertas().subscribe({
+      next: (ofertas) => {
+        this.ofertasEmpleo = ofertas;
+        console.info(ofertas);
+      },
+      error: (e) => {
+        console.error(e);
+      },
+      complete: () => {
+      }
+    })
+  }
+
+
+  visibilidad(oferta:OfertaEmpleo): void {
+    oferta.visibilidad = ! oferta.visibilidad;
+  }
+
 
 }

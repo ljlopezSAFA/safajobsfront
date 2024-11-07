@@ -1,32 +1,36 @@
 
 
 <ion-grid >
+
+
+
   <ion-row class="centrar" style="margin-top:20px">
     <ion-button color="principal" id="open-modal" expand="block">Nueva Publicación</ion-button>
   </ion-row>
 
 
-  <ion-row  style="display: flex; justify-content: center; align-items: center;">
+  <ion-row  *ngFor="let p of publicaciones"
+    style="display: flex; justify-content: center; align-items: center;">
     <ion-col size="10">
       <ion-card>
         <ion-card-header>
           <ion-row>
             <ion-col size="3" style="align-items: center; display: flex; justify-content: center;">
               <ion-avatar>
-                <ion-img src="https://picsum.photos/80/80?random=5"/>
+                <ion-img src="{{p.fotoPerfil}}"/>
               </ion-avatar>
             </ion-col>
             <ion-col size="9">
-              <ion-title style="font-size: 12pt;padding-inline-start: 0;padding-inline-end: 0;text-align: left;"><b>Antonio García</b></ion-title>
-              <ion-text style="font-size: 10pt;">Ingeniero Informático en <b>Energy Microsistems</b></ion-text>
+              <ion-title style="font-size: 12pt;padding-inline-start: 0;padding-inline-end: 0;text-align: left;"><b>{{p.nombrePerfil}}</b></ion-title>
+              <ion-text style="font-size: 10pt;"><b></b></ion-text>
             </ion-col>
           </ion-row>
         </ion-card-header>
 
         <ion-card-content>
-          <ion-text style="padding-bottom: 10px">Estoy agradecido de haber encontrado trabajo.</ion-text>
+          <ion-text style="padding-bottom: 10px">{{p.texto}}</ion-text>
           <ion-img
-            src="https://img.freepik.com/fotos-premium/cierrese-encima-mano-que-sostiene-contrato-muestra-pluma-documento_10541-1024.jpg"></ion-img>
+            src="{{p.imagenUrl}}"></ion-img>
         </ion-card-content>
       </ion-card>
 
@@ -36,63 +40,7 @@
   </ion-row>
 
 
-  <!-- ----------------------------------------  SE AÑADIRÍA LUEGO CON DIRECTIVAS y DATOS ---------------------------->
-  <ion-row  style="display: flex; justify-content: center; align-items: center;">
-    <ion-col size="10">
-      <ion-card>
-        <ion-card-header>
-          <ion-row>
-            <ion-col size="3" style="align-items: center; display: flex; justify-content: center;">
-              <ion-avatar>
-                <ion-img src="https://picsum.photos/80/80?random=6"/>
-              </ion-avatar>
-            </ion-col>
-            <ion-col size="9">
-              <ion-title style="font-size: 12pt;padding-inline-start: 0;padding-inline-end: 0;text-align: left;"><b>Antonio García</b></ion-title>
-              <ion-text style="font-size: 10pt;">Ingeniero Informático en <b>Energy Microsistems</b></ion-text>
-            </ion-col>
-          </ion-row>
-        </ion-card-header>
 
-        <ion-card-content>
-          <ion-text style="padding-bottom: 10px">Estoy agradecido de haber encontrado trabajo.</ion-text>
-          <ion-img
-            src="https://img.freepik.com/fotos-premium/cierrese-encima-mano-que-sostiene-contrato-muestra-pluma-documento_10541-1024.jpg"></ion-img>
-        </ion-card-content>
-      </ion-card>
-
-
-    </ion-col>
-
-  </ion-row>
-  <ion-row  style="display: flex; justify-content: center; align-items: center;">
-    <ion-col size="10">
-      <ion-card>
-        <ion-card-header>
-          <ion-row>
-            <ion-col size="3" style="align-items: center; display: flex; justify-content: center;">
-              <ion-avatar>
-                <ion-img src="https://picsum.photos/80/80?random=7"/>
-              </ion-avatar>
-            </ion-col>
-            <ion-col size="9">
-              <ion-title style="font-size: 12pt;padding-inline-start: 0;padding-inline-end: 0;text-align: left;"><b>Antonio García</b></ion-title>
-              <ion-text style="font-size: 10pt;">Ingeniero Informático en <b>Energy Microsistems</b></ion-text>
-            </ion-col>
-          </ion-row>
-        </ion-card-header>
-
-        <ion-card-content>
-          <ion-text style="padding-bottom: 10px">Estoy agradecido de haber encontrado trabajo.</ion-text>
-          <ion-img
-            src="https://img.freepik.com/fotos-premium/cierrese-encima-mano-que-sostiene-contrato-muestra-pluma-documento_10541-1024.jpg"></ion-img>
-        </ion-card-content>
-      </ion-card>
-
-
-    </ion-col>
-
-  </ion-row>
 
 
 
