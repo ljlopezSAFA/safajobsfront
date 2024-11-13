@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {IonicModule} from "@ionic/angular";
-import {CommonModule, NgIf} from "@angular/common";
+import {CommonModule} from "@angular/common";
 import {OfertaEmpleoService} from "../services/oferta.empleo.service";
 import {OfertaEmpleo} from "../modelos/OfertaEmpleo";
 
@@ -23,27 +23,43 @@ export class JobsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.obtenerOfertasEmpleo();
+    this.getOfertasEmpleo();
   }
 
 
-  obtenerOfertasEmpleo(): void {
+
+
+
+
+  getOfertasEmpleo():void {
     this.ofertaEmpleoService.getOfertas().subscribe({
-      next: (ofertas) => {
-        this.ofertasEmpleo = ofertas;
-        console.info(ofertas);
+
+      next: (data) => {
+        this.ofertasEmpleo = data;
+        console.info(data);
       },
-      error: (e) => {
-        console.error(e);
-      },
-      complete: () => {
-      }
+      error:(error) => console.error(error),
+      complete: () => console.info("Petición Enviada")
     })
+
+
   }
+
 
 
   visibilidad(oferta:OfertaEmpleo): void {
     oferta.visibilidad = ! oferta.visibilidad;
+  }
+
+
+  inscribirseAOferta(idOferta: any): void{
+    console.log(idOferta);
+    this.ofertaEmpleoService.inscribirseAOferta(idOferta).subscribe({
+      next:(a)=> console.log("Enviado"),
+      error:(error) => console.error(error),
+      complete: () => console.info("Petición Enviada")
+    });
+
   }
 
 

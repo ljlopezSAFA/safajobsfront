@@ -22,7 +22,7 @@
     <ion-grid *ngFor="let oferta of ofertasEmpleo">
 
       <ion-row>
-        <ion-card class="full-width-card" (click)="visibilidad(oferta)">
+        <ion-card class="full-width-card">
           <ion-card-content>
             <ion-item lines="none">
               <ion-row class="centrar full-width-card ">
@@ -42,6 +42,10 @@
                     {{ oferta.remuneracionMinima }} - {{ oferta.remuneracionMaxima }}
                   </ion-text>
                 </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-button color="principal" (click)="inscribirseAOferta(oferta.id)">Inscribirse</ion-button>
+                <ion-button color="principal" (click)="visibilidad(oferta)">Ver Datos</ion-button>
               </ion-row>
             </ion-item>
           </ion-card-content>

@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {ComunService} from "./comun.service";
 import {Perfil} from "../modelos/Perfil";
 import {OfertaEmpleo} from "../modelos/OfertaEmpleo";
+import {InscripcionOferta} from "../modelos/InscripcionOferta";
 
 @Injectable({
   providedIn: 'root'
@@ -17,9 +18,16 @@ export class OfertaEmpleoService {
 
   // Método para obtener los perfiles
   getOfertas(): Observable<OfertaEmpleo[]> {
-    const options = this.comunService.autorizarPeticion();
-    return this.http.get<any>(`${this.ofertaEmpleoAllUrl}`, options);
+    return this.http.get<any>(`${this.ofertaEmpleoAllUrl}`);
   }
+
+
+  inscribirseAOferta(idOferta: any):Observable<any> {
+    let inscripcionOferta =  new InscripcionOferta(idOferta, 1);
+    return this.http.post('/api/ofertas-empleo/inscribirse', inscripcionOferta)
+  }
+
+
 
 
 }
