@@ -3,6 +3,9 @@ import {IonicModule} from "@ionic/angular";
 import {CommonModule} from "@angular/common";
 import {OfertaEmpleoService} from "../services/oferta.empleo.service";
 import {OfertaEmpleo} from "../modelos/OfertaEmpleo";
+import {addIcons} from "ionicons";
+import {clipboard, clipboardOutline, eye, eyeOutline} from "ionicons/icons";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-jobs',
@@ -12,6 +15,7 @@ import {OfertaEmpleo} from "../modelos/OfertaEmpleo";
   imports: [
     IonicModule,
     CommonModule,
+    RouterLink
   ]
 })
 export class JobsComponent implements OnInit {
@@ -20,7 +24,9 @@ export class JobsComponent implements OnInit {
 
 
   constructor(private ofertaEmpleoService: OfertaEmpleoService) {
+    addIcons({eyeOutline, clipboardOutline})
   }
+
 
   ngOnInit() {
     this.getOfertasEmpleo();

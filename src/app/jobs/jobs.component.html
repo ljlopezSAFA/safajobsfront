@@ -16,44 +16,55 @@
     </ion-row>
 
 
-
-
-
     <ion-grid *ngFor="let oferta of ofertasEmpleo">
 
       <ion-row>
         <ion-card class="full-width-card">
-          <ion-card-content>
+          <ion-card-content style="padding: 0px;">
             <ion-item lines="none">
               <ion-row class="centrar full-width-card ">
                 <ion-col size="3">
-                  <ion-avatar style="width: 60px; height: 60px;">
+                  <ion-avatar style="width: 70px; height: 70px; border: #0e6a95 solid 1px">
                     <ion-img
                       src="{{oferta.empresa?.foto}}"></ion-img>
                   </ion-avatar>
                 </ion-col>
                 <ion-col size="9">
-                  <ion-text style="padding-left:0">
-                    <b>{{ oferta.titular }}</b>
-                    <br>
-                    <p style="font-size: 8pt; color: #0e6a95;"><b>{{ oferta.empresa?.nombre }}</b></p>
-                    {{ oferta.puesto }}
-                    <br>
-                    {{ oferta.remuneracionMinima }} - {{ oferta.remuneracionMaxima }}
-                  </ion-text>
+                  <ion-row>
+                    <ion-text style="padding-left:0">
+                      <b>{{ oferta.titular }}</b>
+                      <br>
+                      <p style="font-size: 8pt; color: #0e6a95;"><b>{{ oferta.empresa?.nombre }}</b></p>
+                      {{ oferta.puesto }}
+                      <br>
+                      {{ oferta.remuneracionMinima }} - {{ oferta.remuneracionMaxima }}
+                    </ion-text>
+                  </ion-row>
+                 <ion-row>
+                   <ion-col size="8"></ion-col>
+                   <ion-col size="2">
+                     <ion-button color="principal" (click)="inscribirseAOferta(oferta.id)" shape="round">
+                       <ion-icon name="clipboard-outline"></ion-icon>
+                     </ion-button>
+                   </ion-col>
+                   <ion-col size="2">
+                     <ion-button color="principal" (click)="visibilidad(oferta)" shape="round">
+                       <ion-icon name="eye-outline"></ion-icon>
+                     </ion-button>
+                   </ion-col>
+                   <ion-col size="2">
+                     <ion-button color="principal" [routerLink]="['/detalles-empleo', oferta.id]" shape="round">
+                       <ion-icon name="eye-outline"></ion-icon>
+                     </ion-button>
+                   </ion-col>
+                 </ion-row>
                 </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-button color="principal" (click)="inscribirseAOferta(oferta.id)">Inscribirse</ion-button>
-                <ion-button color="principal" (click)="visibilidad(oferta)">Ver Datos</ion-button>
               </ion-row>
             </ion-item>
           </ion-card-content>
         </ion-card>
 
       </ion-row>
-
-
           <!-- Contenido oculto -->
           <ion-row *ngIf="oferta.visibilidad">
             <ion-card class="full-width-card">
@@ -62,8 +73,6 @@
               </ion-card-content>
             </ion-card>
           </ion-row>
-
-
     </ion-grid>
 
 
