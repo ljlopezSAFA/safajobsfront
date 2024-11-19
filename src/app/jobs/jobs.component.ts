@@ -4,7 +4,7 @@ import {CommonModule} from "@angular/common";
 import {OfertaEmpleoService} from "../services/oferta.empleo.service";
 import {OfertaEmpleo} from "../modelos/OfertaEmpleo";
 import {addIcons} from "ionicons";
-import {clipboard, clipboardOutline, eye, eyeOutline} from "ionicons/icons";
+import {clipboard, clipboardOutline, eye, eyeOutline, peopleOutline} from "ionicons/icons";
 import {RouterLink} from "@angular/router";
 
 @Component({
@@ -24,7 +24,7 @@ export class JobsComponent implements OnInit {
 
 
   constructor(private ofertaEmpleoService: OfertaEmpleoService) {
-    addIcons({eyeOutline, clipboardOutline})
+    addIcons({eyeOutline, clipboardOutline, peopleOutline})
   }
 
 

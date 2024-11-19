@@ -85,6 +85,15 @@ ion-col{
   --ion-color-principal-tint: #549cc4;
 }
 
+:root {
+  --ion-color-sprincipal: #96c2d2;
+  --ion-color-sprincipal-rgb: 14,106,149;
+  --ion-color-sprincipal-contrast: #ffffff;
+  --ion-color-sprincipal-contrast-rgb: 0,0,0;
+  --ion-color-sprincipal-shade: #549cc4;
+  --ion-color-sprincipal-tint: #0e6a95;
+}
+
 .ion-color-principal {
   --ion-color-base: var(--ion-color-principal);
   --ion-color-base-rgb: var(--ion-color-principal-rgb);
@@ -93,6 +102,18 @@ ion-col{
   --ion-color-shade: var(--ion-color-principal-shade);
   --ion-color-tint: var(--ion-color-principal-tint);
 }
+
+.ion-color-sprincipal {
+  --ion-color-base: var(--ion-color-sprincipal);
+  --ion-color-base-rgb: var(--ion-color-sprincipal-rgb);
+  --ion-color-contrast: var(--ion-color-sprincipal-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-sprincipal-contrast-rgb);
+  --ion-color-shade: var(--ion-color-sprincipal-shade);
+  --ion-color-tint: var(--ion-color-sprincipal-tint);
+}
+
+
+
 
 
 :root {

@@ -8,6 +8,7 @@ import {PersonalChatComponent} from "./personal-chat/personal-chat.component";
 import {JobsComponent} from "./jobs/jobs.component";
 import {BuscadorPerfilesComponent} from "./buscador-perfiles/buscador-perfiles.component";
 import {OfertaEmpleoDetallesComponent} from "./oferta-empleo-detalles/oferta-empleo-detalles.component";
+import {AptitudesComponent} from "./aptitudes/aptitudes.component";
 
 export const routes: Routes = [
 
@@ -21,4 +22,5 @@ export const routes: Routes = [
   {path: 'jobs', component: JobsComponent,},
   {path: 'buscador-perfiles', component: BuscadorPerfilesComponent,},
   {path: 'detalles-empleo/:id', component: OfertaEmpleoDetallesComponent,},
+  {path: 'aptitudes', component: AptitudesComponent,},
 ];

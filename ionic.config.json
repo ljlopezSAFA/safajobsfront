@@ -3,5 +3,14 @@
   "integrations": {
     "capacitor": {}
   },
-  "type": "angular-standalone"
+  "type": "angular-standalone",
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:8080",
+      "secure": false,
+      "changeOrigin": true,
+      "pathRewrite": { "^/api": "" },
+      "logLevel": "debug"
+    }
+  }
 }

@@ -1,0 +1,36 @@
+<ion-content>
+  <ion-grid>
+
+    <ion-row *ngFor="let a of aptitudes">
+      <ion-card class="full-width-card" *ngIf="!esPar(a.id)" color="principal">
+        <ion-card-header>
+          <ion-card-title>{{a.titulo}}</ion-card-title>
+          <ion-card-subtitle>{{a.tipoAptitud}}</ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-card-content>
+          {{a.detalle}}
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="full-width-card" *ngIf="esPar(a.id)" color="sprincipal">
+        <ion-card-header>
+          <ion-card-title>{{a.titulo}}</ion-card-title>
+          <ion-card-subtitle>{{a.tipoAptitud}}</ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-card-content>
+          {{a.detalle}}
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+
+
+
+
+
+
+
+  </ion-grid>
+</ion-content>
+
+
