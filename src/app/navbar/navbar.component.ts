@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {addIcons} from "ionicons";
-import {briefcaseOutline, bulbOutline, gridOutline, menuOutline, peopleOutline} from "ionicons/icons";
-import {RouterModule} from "@angular/router";
+import {briefcaseOutline, bulbOutline, exitOutline, gridOutline, menuOutline, peopleOutline} from "ionicons/icons";
+import {Router, RouterModule} from "@angular/router";
 import {IonicModule} from "@ionic/angular";
+import {LoginService} from "../services/login.service";
 
 @Component({
   selector: 'app-navbar',
@@ -16,10 +17,18 @@ import {IonicModule} from "@ionic/angular";
 })
 export class NavbarComponent  implements OnInit {
 
-  constructor() {
-    addIcons({menuOutline, gridOutline, briefcaseOutline, peopleOutline,bulbOutline})
+  constructor(private router:Router, private loginService:LoginService) {
+    addIcons({menuOutline, gridOutline, briefcaseOutline, peopleOutline,bulbOutline,exitOutline})
   }
 
   ngOnInit() {}
+
+
+  doLogout(){
+    sessionStorage.clear();
+    this.loginService.setAuthState(false);
+    this.router.navigate(['/login']);
+
+  }
 
 }

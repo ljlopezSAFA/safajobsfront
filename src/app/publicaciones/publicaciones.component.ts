@@ -8,6 +8,7 @@ import {CommonModule, NgForOf} from "@angular/common";
 import {FroalaEditorModule, FroalaViewModule} from "angular-froala-wysiwyg";
 import {PublicacionCrear} from "../modelos/PublicacionCrear";
 import {FormsModule} from "@angular/forms";
+import {FechaFormateada} from "../utils/utils";
 
 @Component({
   selector: 'app-publicaciones',
@@ -17,7 +18,8 @@ import {FormsModule} from "@angular/forms";
   imports: [
     IonicModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    FechaFormateada
   ]
 })
 export class PublicacionesComponent implements OnInit {

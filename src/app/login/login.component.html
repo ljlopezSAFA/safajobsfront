@@ -1,0 +1,52 @@
+<ion-content class="split-background" style="margin-top: -5000px">
+
+  <ion-row class="centrar">
+    <ion-col size="auto">
+      <ion-img class="rounded-image" src="/assets/img/safajobslogo.png" style="max-width: 200px;"></ion-img>
+    </ion-col>
+  </ion-row>
+
+  <ion-card>
+
+    <!-- Imagen relacionada con el empleo -->
+    <ion-row class="image-container">
+      <ion-img
+        src="https://img.freepik.com/foto-gratis/grupo-companeros-trabajo-oficina-posando_23-2148985517.jpg?t=st=1736879795~exp=1736883395~hmac=985a49a3cfe99f091b4e8ffe56df82527b81dbb3608237f1e423778079be9736&w=996"
+        alt="Employment"/>
+    </ion-row>
+
+
+
+    <!-- Contenido del formulario de inicio de sesión -->
+    <ion-row>
+      <ion-col size="4">
+        <ion-label class="centered-label"><b>Usuario</b></ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-input placeholder="Nombre de usuario" fill="outline"  [(ngModel)]="login.username" >
+          <ion-icon slot="end" name="person-outline" aria-hidden="true" color="principal"></ion-icon>
+        </ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="4">
+        <ion-label class="centered-label"><b>Contraseña</b></ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-input placeholder="Contraseña" type="password" fill="outline" [(ngModel)]="login.password">
+          <ion-icon slot="end" name="key-outline"  aria-hidden="true" color="principal"></ion-icon>
+        </ion-input>
+      </ion-col>
+    </ion-row>
+
+
+
+    <ion-row class="centrar">
+      <ion-col size="6" class="centrar">
+        <ion-button class="login-button" color="principal" (click)="doLogin()">Login</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+</ion-content>

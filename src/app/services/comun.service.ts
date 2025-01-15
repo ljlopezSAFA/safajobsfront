@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +12,9 @@ export class ComunService {
   }
 
   autorizarPeticion() {
-    const headers = new HttpHeaders({
+    const headers:HttpHeaders = new HttpHeaders({
       'Content-Type': 'application/json',
-      // 'Authorization': 'Bearer ' + localStorage.getItem('token'),
+       'Authorization': 'Bearer ' + sessionStorage.getItem('authToken'),
     });
 
     return {headers: headers}

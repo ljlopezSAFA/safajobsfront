@@ -6,10 +6,15 @@
       </ion-menu-button>
     </ion-buttons>
     <ion-row style="display: flex; justify-content: center; align-items: center;">
-      <ion-col size="auto" style="padding-right: 7%">
+      <ion-col size="auto" >
         <ion-img src="/assets/img/safajobslogo.png" style="max-width: 200px;"></ion-img>
       </ion-col>
     </ion-row>
+    <ion-buttons slot="end">
+      <ion-button (click)="doLogout()">
+        <ion-icon name="exit-outline" size="large" style="color:#0e6a95"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 

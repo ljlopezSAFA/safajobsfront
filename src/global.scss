@@ -50,6 +50,14 @@ ion-content {
   align-items: center;
 }
 
+.centered-label {
+  display: flex; /* Activar flexbox */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  text-align: center; /* Asegura que el texto esté alineado */
+  height: 100%; /* Asegúrate de ocupar todo el espacio disponible si es necesario */
+}
+
 .medium-avatar {
   border: 2px solid #0e6a95;
   width: 130px;
