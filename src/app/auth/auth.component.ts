@@ -91,7 +91,12 @@ export class AuthComponent implements OnInit {
   doRegister() {
     if (this.registroForm.valid) {
       this.registro = {...this.registro, ...this.registroForm.value};
-      console.log('Registro exitoso:', this.registro);
+      this.loginService.registrar(this.registro).subscribe({
+        next: (respuesta) => console.info("registro exitoso"),
+        error: (e) => console.error(e),
+        complete: () => this.goLogin()
+      })
+
     } else {
       console.log('Formulario inválido. Por favor verifica los datos.');
     }
