@@ -3,8 +3,7 @@ import {NavbarComponent} from "./navbar/navbar.component";
 import {MenuInferiorComponent} from "./menu-inferior/menu-inferior.component";
 import {IonicModule} from "@ionic/angular";
 import {Router} from "@angular/router";
-import {CommonModule, NgIf} from "@angular/common";
-import {LoginComponent} from "./login/login.component";
+import {CommonModule} from "@angular/common";
 import {LoginService} from "./services/login.service";
 
 @Component({
@@ -22,9 +21,12 @@ export class AppComponent {
     this.loginService.authState$.subscribe((isAuthenticated) => {
       this.showMenuInferior = isAuthenticated;
 
-      if (!isAuthenticated) {
-        this.router.navigate(['/login']);
+      if(!isAuthenticated){
+        this.router.navigate(['/auth']);
       }
+
     });
+
+
   }
 }

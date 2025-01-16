@@ -1,0 +1,23 @@
+.split-background {
+  --background: linear-gradient(
+      to bottom,
+      #FFFFFF 40%,
+      #0e6a95 60%
+  );
+}
+
+.split-background-register {
+  --background: linear-gradient(
+      to bottom,
+      #0e6a95 40%,
+      #FFFFFF 60%
+  );
+}
+
+ion-input{
+  background: #f0f0f0;
+  color: #0e6a95;
+  outline-color:#0e6a95;
+  --ion-color-primary: #0e6a95; /* Cambia el color del borde */
+  --highlight-color-focused: #0e6a95; /* Color del borde cuando está enfocado */
+}

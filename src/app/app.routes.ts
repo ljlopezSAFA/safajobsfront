@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import {Routes} from '@angular/router';
 import {HomePage} from "./home/home.page";
 import {AboutusComponent} from "./aboutus/aboutus.component";
 import {PublicacionesComponent} from "./publicaciones/publicaciones.component";
@@ -9,8 +9,7 @@ import {JobsComponent} from "./jobs/jobs.component";
 import {BuscadorPerfilesComponent} from "./buscador-perfiles/buscador-perfiles.component";
 import {OfertaEmpleoDetallesComponent} from "./oferta-empleo-detalles/oferta-empleo-detalles.component";
 import {AptitudesComponent} from "./aptitudes/aptitudes.component";
-import {LoginComponent} from "./login/login.component";
-import {RegistroComponent} from "./registro/registro.component";
+import {AuthComponent} from "./auth/auth.component";
 
 export const routes: Routes = [
 
@@ -25,6 +24,5 @@ export const routes: Routes = [
   {path: 'buscador-perfiles', component: BuscadorPerfilesComponent,},
   {path: 'detalles-empleo/:id', component: OfertaEmpleoDetallesComponent,},
   {path: 'aptitudes', component: AptitudesComponent,},
-  {path: 'login', component: LoginComponent,},
-  {path: 'registro', component: RegistroComponent,},
+  {path: 'auth', component: AuthComponent,},
 ];

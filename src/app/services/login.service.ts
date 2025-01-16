@@ -10,8 +10,10 @@ import {Login} from "../modelos/Login";
 export class LoginService {
 
   private apiUrl = environment.apiUrl;
+
   private authState = new BehaviorSubject<boolean>(!!sessionStorage.getItem('authToken'));
   authState$ = this.authState.asObservable();
+
 
 
   constructor(private http: HttpClient) {
@@ -19,7 +21,6 @@ export class LoginService {
   setAuthState(isAuthenticated: boolean): void {
     this.authState.next(isAuthenticated);
   }
-
 
 
   loguear(login: Login): Observable<any>{

@@ -1,0 +1,196 @@
+<!--PANTALLA DE LOGIN-->
+
+<ion-content class="split-background" *ngIf="loginViewFlag">
+
+  <ion-row class="centrar">
+    <ion-col size="auto">
+      <ion-img class="rounded-image" src="/assets/img/safajobslogo.png" style="max-width: 200px;"></ion-img>
+    </ion-col>
+  </ion-row>
+
+  <ion-card>
+
+    <!-- Imagen relacionada con el empleo -->
+    <ion-row class="image-container">
+      <ion-img
+        src="https://img.freepik.com/foto-gratis/grupo-companeros-trabajo-oficina-posando_23-2148985517.jpg?t=st=1736879795~exp=1736883395~hmac=985a49a3cfe99f091b4e8ffe56df82527b81dbb3608237f1e423778079be9736&w=996"
+        alt="Employment"/>
+    </ion-row>
+
+
+
+    <!-- Contenido del formulario de inicio de sesión -->
+    <ion-row>
+      <ion-col size="4">
+        <ion-label class="centered-label"><b>Usuario</b></ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-input placeholder="Nombre de usuario" fill="outline"  [(ngModel)]="login.username" >
+          <ion-icon slot="end" name="person-outline" aria-hidden="true" color="principal"></ion-icon>
+        </ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="4">
+        <ion-label class="centered-label"><b>Contraseña</b></ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-input placeholder="Contraseña" type="password" fill="outline" [(ngModel)]="login.password">
+          <ion-icon slot="end" name="key-outline"  aria-hidden="true" color="principal"></ion-icon>
+        </ion-input>
+      </ion-col>
+    </ion-row>
+
+
+
+    <ion-row class="centrar">
+      <ion-col size="9" class="" style="align-items: end; display: flex; justify-content: end;">
+        <ion-button class="login-button" color="principal" (click)="doLogin()">Login</ion-button>
+      </ion-col>
+
+      <ion-col size="3" class="centrar" style="text-align: end;">
+        <ion-label (click)="goRegister()" style="color: #0e6a95" >
+          <u>Quiero Registrarme</u>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+
+  </ion-card>
+</ion-content>
+
+
+
+
+
+
+
+
+
+<!--PANTALLA DE REGISTRO-->
+
+<ion-content class="split-background-register" *ngIf="!loginViewFlag">
+
+  <ion-card>
+
+    <!-- Imagen relacionada con el empleo -->
+    <ion-row class="image-container">
+      <ion-img
+        src="https://img.freepik.com/foto-gratis/plano-medio-desempleados-hablando-telefono_23-2148773993.jpg?t=st=1736947659~exp=1736951259~hmac=1b2898d5e9f5cd683707ff27d9ab4e5ba71e21dfa33531edc8ea591ab30de551&w=996"
+        alt="Employment"/>
+    </ion-row>
+
+    <ion-row class="centrar">
+      <ion-col size="auto">
+        <ion-img class="rounded-image" src="/assets/img/safajobslogo.png" style="max-width: 200px;"></ion-img>
+      </ion-col>
+    </ion-row>
+
+
+    <!-- Contenido del formulario de inicio de sesión -->
+    <ion-row class="center" style="text-align: center; padding-top: 10px">
+      <ion-title color="principal">Regístrate en nuestra web</ion-title>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="4">
+        <ion-label class="centered-label"><b>Nombre</b></ion-label>
+      </ion-col>
+      <ion-col>
+        <!--        [(ngModel)]=""-->
+        <ion-input placeholder="Nombre" fill="outline" >
+          <ion-icon slot="end" name="person-circle" aria-hidden="true" color="principal"></ion-icon>
+        </ion-input>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+      <ion-col size="4">
+        <ion-label class="centered-label"><b>Apellidos</b></ion-label>
+      </ion-col>
+      <ion-col>
+        <!--        [(ngModel)]=""-->
+        <ion-input placeholder="Apellidos" fill="outline"   >
+          <ion-icon slot="end" name="person-circle-outline" aria-hidden="true" color="principal"></ion-icon>
+        </ion-input>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+      <ion-col size="4">
+        <ion-label class="centered-label"><b>Email</b></ion-label>
+      </ion-col>
+      <ion-col>
+        <!--        [(ngModel)]=""-->
+        <ion-input placeholder="Email" fill="outline"   >
+          <ion-icon slot="end" name="mail-outline" aria-hidden="true" color="principal"></ion-icon>
+        </ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="4">
+        <ion-label class="centered-label"><b>Fecha Nacimiento</b></ion-label>
+      </ion-col>
+      <ion-col>
+        <!--        [(ngModel)]=""-->
+        <ion-input placeholder="Fecha de Nacimiento" fill="outline" type="date" color="principal" >
+        </ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="4">
+        <ion-label class="centered-label"><b>DNI</b></ion-label>
+      </ion-col>
+      <ion-col>
+        <!--        [(ngModel)]=""-->
+        <ion-input placeholder="DNI (Con letra)" fill="outline"   >
+          <ion-icon slot="end" name="id-card-outline" aria-hidden="true" color="principal"></ion-icon>
+        </ion-input>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+      <ion-col size="4">
+        <ion-label class="centered-label"><b>Usuario</b></ion-label>
+      </ion-col>
+      <ion-col>
+        <!--        [(ngModel)]=""-->
+        <ion-input placeholder="Nombre de usuario" fill="outline"   >
+          <ion-icon slot="end" name="person-outline" aria-hidden="true" color="principal"></ion-icon>
+        </ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="4">
+        <ion-label class="centered-label"><b>Contraseña</b></ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-input placeholder="Contraseña" type="password" fill="outline">
+          <ion-icon slot="end" name="key-outline"  aria-hidden="true" color="principal"></ion-icon>
+        </ion-input>
+      </ion-col>
+    </ion-row>
+
+
+
+    <ion-row class="centrar">
+      <ion-col size="9" class="" style="align-items: end; display: flex; justify-content: end;">
+        <ion-button class="login-button" color="principal" (click)="goRegister()">Login</ion-button>
+      </ion-col>
+
+      <ion-col size="3" class="centrar" style="text-align: end;">
+        <ion-label (click)="goLogin()" style="color: #0e6a95" >
+          <u>Acceder</u>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+</ion-content>
