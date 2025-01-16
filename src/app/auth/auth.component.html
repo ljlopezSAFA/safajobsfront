@@ -18,54 +18,57 @@
     </ion-row>
 
 
+    <form [formGroup]="loginForm" id="login">
 
-    <!-- Contenido del formulario de inicio de sesión -->
-    <ion-row>
-      <ion-col size="4">
-        <ion-label class="centered-label"><b>Usuario</b></ion-label>
-      </ion-col>
-      <ion-col>
-        <ion-input placeholder="Nombre de usuario" fill="outline"  [(ngModel)]="login.username" >
-          <ion-icon slot="end" name="person-outline" aria-hidden="true" color="principal"></ion-icon>
-        </ion-input>
-      </ion-col>
-    </ion-row>
+      <!-- Contenido del formulario de inicio de sesión -->
+      <ion-row>
+        <ion-col size="4">
+          <ion-label class="centered-label"><b>Usuario</b></ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-input
+            id="username"
+            placeholder="Nombre de usuario"
+            fill="outline"
+            formControlName="username">
+            <ion-icon slot="end" name="person-outline" aria-hidden="true" color="principal"></ion-icon>
+          </ion-input>
+        </ion-col>
+      </ion-row>
 
-    <ion-row>
-      <ion-col size="4">
-        <ion-label class="centered-label"><b>Contraseña</b></ion-label>
-      </ion-col>
-      <ion-col>
-        <ion-input placeholder="Contraseña" type="password" fill="outline" [(ngModel)]="login.password">
-          <ion-icon slot="end" name="key-outline"  aria-hidden="true" color="principal"></ion-icon>
-        </ion-input>
-      </ion-col>
-    </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-label class="centered-label"><b>Contraseña</b></ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-input
+            id="password"
+            placeholder="Contraseña"
+            type="password"
+            fill="outline"
+            formControlName="password">
+            <ion-icon slot="end" name="key-outline" aria-hidden="true" color="principal"></ion-icon>
+          </ion-input>
+        </ion-col>
+      </ion-row>
 
 
+      <ion-row class="centrar">
+        <ion-col size="9" class="" style="align-items: end; display: flex; justify-content: end;">
+          <ion-button class="login-button" color="principal" (click)="doLogin()">Login</ion-button>
+        </ion-col>
 
-    <ion-row class="centrar">
-      <ion-col size="9" class="" style="align-items: end; display: flex; justify-content: end;">
-        <ion-button class="login-button" color="principal" (click)="doLogin()">Login</ion-button>
-      </ion-col>
-
-      <ion-col size="3" class="centrar" style="text-align: end;">
-        <ion-label (click)="goRegister()" style="color: #0e6a95" >
-          <u>Quiero Registrarme</u>
-        </ion-label>
-      </ion-col>
-    </ion-row>
+        <ion-col size="3" class="centrar" style="text-align: end;">
+          <ion-label (click)="goRegister()" style="color: #0e6a95">
+            <u>Quiero Registrarme</u>
+          </ion-label>
+        </ion-col>
+      </ion-row>
+    </form>
 
 
   </ion-card>
 </ion-content>
-
-
-
-
-
-
-
 
 
 <!--PANTALLA DE REGISTRO-->
@@ -88,109 +91,112 @@
     </ion-row>
 
 
-    <!-- Contenido del formulario de inicio de sesión -->
-    <ion-row class="center" style="text-align: center; padding-top: 10px">
-      <ion-title color="principal">Regístrate en nuestra web</ion-title>
-    </ion-row>
+    <form [formGroup]="registroForm" id="registro">
+      <ion-row>
+        <ion-col size="4">
+          <ion-label class="centered-label"><b>Nombre</b></ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-input
+            placeholder="Nombre"
+            fill="outline"
+            formControlName="nombre"
+          ></ion-input>
+        </ion-col>
+      </ion-row>
 
-    <ion-row>
-      <ion-col size="4">
-        <ion-label class="centered-label"><b>Nombre</b></ion-label>
-      </ion-col>
-      <ion-col>
-        <!--        [(ngModel)]=""-->
-        <ion-input placeholder="Nombre" fill="outline" >
-          <ion-icon slot="end" name="person-circle" aria-hidden="true" color="principal"></ion-icon>
-        </ion-input>
-      </ion-col>
-    </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-label class="centered-label"><b>Apellidos</b></ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-input
+            placeholder="Apellidos"
+            fill="outline"
+            formControlName="apellidos"
+          ></ion-input>
+        </ion-col>
+      </ion-row>
 
+      <ion-row>
+        <ion-col size="4">
+          <ion-label class="centered-label"><b>Email</b></ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-input
+            placeholder="Email"
+            fill="outline"
+            formControlName="mail"
+          ></ion-input>
+        </ion-col>
+      </ion-row>
 
-    <ion-row>
-      <ion-col size="4">
-        <ion-label class="centered-label"><b>Apellidos</b></ion-label>
-      </ion-col>
-      <ion-col>
-        <!--        [(ngModel)]=""-->
-        <ion-input placeholder="Apellidos" fill="outline"   >
-          <ion-icon slot="end" name="person-circle-outline" aria-hidden="true" color="principal"></ion-icon>
-        </ion-input>
-      </ion-col>
-    </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-label class="centered-label"><b>Fecha Nacimiento</b></ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-input
+            type="date"
+            fill="outline"
+            formControlName="fechaNacimiento"
+          ></ion-input>
+        </ion-col>
+      </ion-row>
 
+      <ion-row>
+        <ion-col size="4">
+          <ion-label class="centered-label"><b>DNI</b></ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-input
+            placeholder="DNI"
+            fill="outline"
+            formControlName="dni"
+          ></ion-input>
+        </ion-col>
+      </ion-row>
 
-    <ion-row>
-      <ion-col size="4">
-        <ion-label class="centered-label"><b>Email</b></ion-label>
-      </ion-col>
-      <ion-col>
-        <!--        [(ngModel)]=""-->
-        <ion-input placeholder="Email" fill="outline"   >
-          <ion-icon slot="end" name="mail-outline" aria-hidden="true" color="principal"></ion-icon>
-        </ion-input>
-      </ion-col>
-    </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-label class="centered-label"><b>Usuario</b></ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-input
+            placeholder="Nombre de usuario"
+            fill="outline"
+            formControlName="username"
+          ></ion-input>
+        </ion-col>
+      </ion-row>
 
-    <ion-row>
-      <ion-col size="4">
-        <ion-label class="centered-label"><b>Fecha Nacimiento</b></ion-label>
-      </ion-col>
-      <ion-col>
-        <!--        [(ngModel)]=""-->
-        <ion-input placeholder="Fecha de Nacimiento" fill="outline" type="date" color="principal" >
-        </ion-input>
-      </ion-col>
-    </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-label class="centered-label"><b>Contraseña</b></ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-input
+            placeholder="Contraseña"
+            type="password"
+            fill="outline"
+            formControlName="password"
+          ></ion-input>
+        </ion-col>
+      </ion-row>
 
-    <ion-row>
-      <ion-col size="4">
-        <ion-label class="centered-label"><b>DNI</b></ion-label>
-      </ion-col>
-      <ion-col>
-        <!--        [(ngModel)]=""-->
-        <ion-input placeholder="DNI (Con letra)" fill="outline"   >
-          <ion-icon slot="end" name="id-card-outline" aria-hidden="true" color="principal"></ion-icon>
-        </ion-input>
-      </ion-col>
-    </ion-row>
-
-
-    <ion-row>
-      <ion-col size="4">
-        <ion-label class="centered-label"><b>Usuario</b></ion-label>
-      </ion-col>
-      <ion-col>
-        <!--        [(ngModel)]=""-->
-        <ion-input placeholder="Nombre de usuario" fill="outline"   >
-          <ion-icon slot="end" name="person-outline" aria-hidden="true" color="principal"></ion-icon>
-        </ion-input>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col size="4">
-        <ion-label class="centered-label"><b>Contraseña</b></ion-label>
-      </ion-col>
-      <ion-col>
-        <ion-input placeholder="Contraseña" type="password" fill="outline">
-          <ion-icon slot="end" name="key-outline"  aria-hidden="true" color="principal"></ion-icon>
-        </ion-input>
-      </ion-col>
-    </ion-row>
-
-
-
-    <ion-row class="centrar">
-      <ion-col size="9" class="" style="align-items: end; display: flex; justify-content: end;">
-        <ion-button class="login-button" color="principal" (click)="goRegister()">Login</ion-button>
-      </ion-col>
-
-      <ion-col size="3" class="centrar" style="text-align: end;">
-        <ion-label (click)="goLogin()" style="color: #0e6a95" >
-          <u>Acceder</u>
-        </ion-label>
-      </ion-col>
-    </ion-row>
+      <ion-row class="centrar">
+        <ion-col size="9" class="" style="align-items: end; display: flex; justify-content: end;">
+          <ion-button class="login-button" color="principal" (click)="doRegister()">
+            Completar Registro
+          </ion-button>
+        </ion-col>
+        <ion-col size="3" class="centrar" style="text-align: end;">
+          <ion-label (click)="goLogin()" style="color: #0e6a95">
+            <u>Acceder</u>
+          </ion-label>
+        </ion-col>
+      </ion-row>
+    </form>
 
   </ion-card>
 </ion-content>

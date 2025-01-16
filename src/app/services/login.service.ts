@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {BehaviorSubject, Observable} from "rxjs";
 import {Login} from "../modelos/Login";
+import {Registro} from "../modelos/Registro";
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +26,10 @@ export class LoginService {
 
   loguear(login: Login): Observable<any>{
     return this.http.post<any>(`${this.apiUrl}/auth/login`,login) ;
+  }
+
+  registrar(registro: Registro): Observable<any>{
+    return this.http.post<any>(`${this.apiUrl}/auth/registro/perfil`,registro) ;
   }
 
 }
