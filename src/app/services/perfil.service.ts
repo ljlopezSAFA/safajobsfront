@@ -11,6 +11,7 @@ import {environment} from "../../environments/environment";
 export class PerfilService {
 
   private perfilAllUrl = '/perfil/all';
+  private perfilUrl = '/perfil/id/';
   private perfilBuscarUrl = '/perfil/buscar';
   private apiUrl = environment.apiUrl;
 
@@ -26,5 +27,10 @@ export class PerfilService {
   buscar(busqueda:string): Observable<Perfil[]> {
     const options = this.comunService.autorizarPeticion();
     return this.http.get<any>(`${this.apiUrl+this.perfilBuscarUrl}?busqueda=${busqueda}`, options);
+  }
+
+  getById(id: number | null): Observable<Perfil> {
+    const options = this.comunService.autorizarPeticion();
+    return this.http.get<any>(`${this.apiUrl+this.perfilUrl}`+id, options);
   }
 }

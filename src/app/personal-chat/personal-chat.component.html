@@ -1,83 +1,59 @@
-<ion-content>
+<ion-content #content scroll-y="true">
 
 
+  <ion-row>
+    <ion-col size="2">
+      <ion-avatar>
+        <ion-img src="{{perfil.foto}}"></ion-img>
+      </ion-avatar>
 
-    <ion-row>
-      <ion-col size="2">
-        <ion-avatar>
-          <ion-img src="https://picsum.photos/80/80?random=5"></ion-img>
+    </ion-col>
+    <ion-title>{{ perfil.nombre }} , {{ perfil.apellidos }}</ion-title>
+  </ion-row>
+
+  <ion-card>
+    <ion-list #chatList>
+
+      <ion-item lines="none" *ngFor="let m of mensajes">
+
+        <ion-avatar slot="start" *ngIf="m.idEmisor === idPerfil">
+          <ion-img src="{{perfil.foto}}"></ion-img>
         </ion-avatar>
-
-      </ion-col>
-      <ion-title>Manolo García</ion-title>
-    </ion-row>
-
-    <ion-card>
-      <ion-list>
-        <ion-item lines="none">
-          <ion-avatar slot="start">
-            <ion-img src="https://picsum.photos/80/80?random=5"></ion-img>
-          </ion-avatar>
-          <ion-label class="message-bubble">
-            Hola ¿qué tal?
-            <br>
-            <ion-text style="font-size: 9pt">16:30</ion-text>
-          </ion-label>
-        </ion-item>
+        <ion-label class="message-bubble" *ngIf="m.idEmisor === idPerfil">
+          {{ m.mensaje }}
+          <br>
+          <ion-text style="font-size: 9pt">{{ m.fecha?.substring(11, 16) }}</ion-text>
+        </ion-label>
 
 
-        <ion-item lines="none">
-          <ion-avatar slot="end">
-            <ion-img src="https://picsum.photos/80/80?random=6"></ion-img>
-          </ion-avatar>
-          <ion-label class="message-bubble" slot="end">Bien ¿y tú? <br>
-            <ion-text style="font-size: 9pt">16:31</ion-text>
-          </ion-label>
-        </ion-item>
+        <ion-avatar slot="end" *ngIf="m.idEmisor !== idPerfil">
+          <ion-img src="{{sessionStorage.getItem('avatar')}}"></ion-img>
+        </ion-avatar>
+        <ion-label class="message-bubble" slot="end" *ngIf="m.idEmisor !== idPerfil">
+          {{ m.mensaje }}
+          <br>
+          <ion-text style="font-size: 9pt">{{ m.fecha?.substring(11, 16) }}</ion-text>
+        </ion-label>
+
+      </ion-item>
 
 
-        <ion-item lines="none">
-          <ion-avatar slot="start">
-            <ion-img src="https://picsum.photos/80/80?random=5"></ion-img>
-          </ion-avatar>
-          <ion-label class="message-bubble">
-            Genial , acabo de salir de currar <br>
-            <ion-text style="font-size: 9pt">16:32</ion-text>
-          </ion-label>
-        </ion-item>
+    </ion-list>
+  </ion-card>
 
 
-        <ion-item lines="none">
-          <ion-avatar slot="start">
-            <ion-img src="https://picsum.photos/80/80?random=5"></ion-img>
-          </ion-avatar>
-          <ion-label class="message-bubble">
-            ¿Nos vemos luego? <br>
-            <ion-text style="font-size: 9pt">16:32</ion-text>
-          </ion-label>
-        </ion-item>
-
-
-        <ion-item lines="none">
-          <ion-avatar slot="end">
-            <ion-img src="https://picsum.photos/80/80?random=6"></ion-img>
-          </ion-avatar>
-          <ion-label class="message-bubble" slot="end">Claro , por mi estupendo <br>
-            <ion-text style="font-size: 9pt">16:33</ion-text>
-          </ion-label>
-        </ion-item>
-      </ion-list>
-
-    </ion-card>
-
-
-<ion-list>
-  <ion-item id="input-chat">
-    <ion-input style="color: #0e6a95" placeholder="Escribe algo....">
-      <ion-icon slot="end" name="paper-plane-outline" aria-hidden="true" size="large" style="color: #0e6a95"></ion-icon>
-    </ion-input>
-  </ion-item>
-</ion-list>
+  <ion-list>
+    <form [formGroup]="mensajeForm" id="formularioMensaje">
+      <ion-item id="input-chat">
+        <ion-input formControlName="texto" id="textoMensaje"
+                   name="texto" style="color: #0e6a95" placeholder="Escribe algo...."
+                   [value]="textoMensaje">
+          <ion-icon slot="end" name="paper-plane-outline" aria-hidden="true" size="large" style="color: #0e6a95"
+                    (click)="enviarMensaje()"></ion-icon>
+        </ion-input>
+      </ion-item>
+    </form>
+  </ion-list>
 
 </ion-content>
 

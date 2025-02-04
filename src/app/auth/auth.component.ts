@@ -71,7 +71,9 @@ export class AuthComponent implements OnInit {
       this.loginService.loguear(this.login).subscribe({
         next: (respuesta) => {
           const token = respuesta.token; // Accede al token
+          const avatar = respuesta.avatar; // Accede al token
           sessionStorage.setItem("authToken", token);
+          sessionStorage.setItem("avatar",avatar )
 
           // Notificar sobre el cambio en el estado de autenticación
           this.loginService.setAuthState(true);
