@@ -11,6 +11,7 @@ import {PerfilService} from "../services/perfil.service";
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {interval, Subscription} from "rxjs";
 import {IonContent} from "@ionic/angular/standalone";
+import {ToastService} from "../services/toast.service";
 
 @Component({
   selector: 'app-personal-chat',
@@ -34,7 +35,7 @@ export class PersonalChatComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild('content') content!: IonContent;
 
   constructor(private route: ActivatedRoute, private chatService: ChatService,
-              private perfilService: PerfilService, private fb: FormBuilder) {
+              private perfilService: PerfilService, private fb: FormBuilder, private toastService: ToastService) {
     addIcons({paperPlaneOutline});
     this.mensajeForm = this.fb.group({
       texto: [this.nuevoMensaje.mensaje, Validators.required],
@@ -97,9 +98,7 @@ export class PersonalChatComponent implements OnInit, OnDestroy, AfterViewInit {
         },
         complete: () => {
 
-          console.info(this.mensajes);
-
-          // 🔽 Espera un momento y baja el scroll
+          // 🔽 Baja el scroll
           this.scrollToBottom();
         }
 
@@ -132,22 +131,23 @@ export class PersonalChatComponent implements OnInit, OnDestroy, AfterViewInit {
 
       this.chatService.enviarMensaje(this.nuevoMensaje).subscribe({
           next: (p) => {
-            console.info(p)
+
           },
           error: (e) => {
             console.error(e);
           },
           complete: () => {
-            this.textoMensaje = "";
+            this.mensajeForm.reset();
+            this.toastService.presentToast("Mensaje enviado", "success")
             this.cargarChats(); // 🔄 Llamar cargarChats() en vez de `ngOnInit()`
           }
-
 
         }
       );
 
     } else {
-      console.log('Formulario inválido. Por favor verifica los datos.');
+      this.toastService.presentToast("Escribe el texto del mensaje", "error")
+
     }
 
   }

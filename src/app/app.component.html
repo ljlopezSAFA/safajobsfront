@@ -1,8 +1,15 @@
+
+
 <ion-app *ngIf="showMenuInferior">
   <app-navbar ></app-navbar>
   <ion-router-outlet  class="custom-outlet" id="main-content" style="--padding-bottom: 800px;"></ion-router-outlet>
   <app-menu-inferior ></app-menu-inferior>
 </ion-app>
+
+
+
+
+
 
 <ion-app *ngIf="!showMenuInferior">
   <ion-router-outlet></ion-router-outlet>

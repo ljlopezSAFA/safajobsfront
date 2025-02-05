@@ -9,6 +9,7 @@ import {FroalaEditorModule, FroalaViewModule} from "angular-froala-wysiwyg";
 import {PublicacionCrear} from "../modelos/PublicacionCrear";
 import {FormsModule} from "@angular/forms";
 import {FechaFormateada} from "../utils/utils";
+import {ToastService} from "../services/toast.service";
 
 @Component({
   selector: 'app-publicaciones',
@@ -30,7 +31,7 @@ export class PublicacionesComponent implements OnInit {
   mostrarModal: boolean = false;
 
 
-  constructor(private publicacionService: PublicacionService) {
+  constructor(private publicacionService: PublicacionService, private toastService:ToastService) {
     addIcons({eye})
   }
 
@@ -44,9 +45,12 @@ export class PublicacionesComponent implements OnInit {
         console.info(data);
         this.cargarPublicaciones();
       },
-      error: (error) => console.error('Error:', error),
+      error: (error) => {
+        console.error('Error:', error);
+        this.toastService.presentToast("Ha habido un fallo al crear la publicación", "error");
+      },
       complete: () => {
-        console.log('Petición completada');
+        this.toastService.presentToast("Publicación creada", "success");
         this.mostrarModal = false;
       }
 

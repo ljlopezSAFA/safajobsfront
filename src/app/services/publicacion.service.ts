@@ -24,8 +24,8 @@ export class PublicacionService {
 
 
   guardar(publicacionNueva: PublicacionCrear): Observable<any>{
-    publicacionNueva.id_perfil =3;
-    return this.httpClient.post<any>(`${this.apiUrl}/publicacion`,publicacionNueva) ;
+    const authHeader = this.comunService.autorizarPeticion()
+    return this.httpClient.post<any>(`${this.apiUrl}/publicacion`,publicacionNueva, authHeader) ;
   }
 
 
