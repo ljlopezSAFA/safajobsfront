@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://safajobs.onrender.com',
+  apiUrl: '/api',
   // apiUrl: 'http://localhost:3000/api', // Esto permite que las solicitudes pasen por el proxy
 };
 
