@@ -3,14 +3,14 @@ import {NavbarComponent} from "./navbar/navbar.component";
 import {MenuInferiorComponent} from "./menu-inferior/menu-inferior.component";
 import {IonicModule} from "@ionic/angular";
 import {Router} from "@angular/router";
-import {CommonModule} from "@angular/common";
+import {CommonModule, HashLocationStrategy, LocationStrategy} from "@angular/common";
 import {LoginService} from "./services/login.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   standalone: true,
-  imports: [IonicModule, NavbarComponent, MenuInferiorComponent, CommonModule],
+  imports: [IonicModule, NavbarComponent, MenuInferiorComponent, CommonModule]
 })
 export class AppComponent {
   showMenuInferior: boolean = true; // Controla si se muestra el menú
