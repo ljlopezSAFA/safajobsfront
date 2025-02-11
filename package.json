@@ -2,7 +2,7 @@
   "name": "safajobsionic",
   "version": "0.0.1",
   "author": "Ionic Framework",
-  "homepage": "/home",
+  "homepage": "https://ionicfram21ework.com/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config src/proxy.conf.json",

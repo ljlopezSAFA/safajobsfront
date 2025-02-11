@@ -25,4 +25,6 @@ export const routes: Routes = [
   {path: 'detalles-empleo/:id', component: OfertaEmpleoDetallesComponent,},
   {path: 'aptitudes', component: AptitudesComponent,},
   {path: 'auth', component: AuthComponent,},
+  { path: '**', redirectTo: '' }
 ];
+
