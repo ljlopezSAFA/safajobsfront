@@ -1,9 +1,6 @@
 
 
 <ion-grid >
-
-
-
   <ion-row class="centrar" style="margin-top:20px">
     <ion-button color="principal" (click)="lanzardialogo()" expand="block">Nueva Publicación</ion-button>
   </ion-row>
@@ -11,7 +8,7 @@
 
   <ion-row  *ngFor="let p of publicaciones"
     style="display: flex; justify-content: center; align-items: center;">
-    <ion-col size="10">
+    <ion-col size="10" class="col-centrada">
       <ion-card class="full-width-card">
         <ion-card-header>
           <ion-row>
@@ -21,9 +18,9 @@
               </ion-avatar>
             </ion-col>
             <ion-col size="9">
-              <ion-title style="font-size: 12pt;padding-inline-start: 0;padding-inline-end: 0;text-align: left; padding-top: 15px;"><b>{{p.nombrePerfil}}</b></ion-title>
-              <ion-text *ngIf="p.puestoPerfil" style="font-size: 10pt;"><i>{{p.puestoPerfil}}</i></ion-text>
-              <ion-text *ngIf="p.fecha" style="font-size: 10pt;"><i>{{p.fecha | fechaFormateada}}</i></ion-text>
+              <ion-title  style="font-size: 11pt;padding-inline-start: 0;padding-inline-end: 0;text-align: left; padding-top: 15px;"><b>{{p.nombrePerfil}}</b></ion-title>
+              <ion-text  *ngIf="p.puestoPerfil" style="font-size: 9pt;"><i>{{p.puestoPerfil}}</i></ion-text>
+              <ion-text *ngIf="p.fecha" style="font-size: 9pt;"><i>{{p.fecha | fechaFormateada}}</i></ion-text>
             </ion-col>
           </ion-row>
         </ion-card-header>
@@ -35,7 +32,7 @@
             </ion-col>
           </ion-row>
           <ion-row>
-            <ion-img src="{{p.imageUrl}}"/>
+            <ion-img class="full-width-img" src="{{p.imageUrl}}"/>
           </ion-row>
         </ion-card-content>
       </ion-card>
@@ -80,11 +77,6 @@
       </ion-content>
     </ng-template>
   </ion-modal>
-
-
-
-
-
 </ion-grid>
 
 

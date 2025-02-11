@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {IonicModule} from "@ionic/angular";
+import {PerfilService} from "../services/perfil.service";
+import {PerfilDatos} from "../modelos/PerfilDatos";
+import {CommonModule} from "@angular/common";
 
 @Component({
   selector: 'app-perfil',
@@ -7,13 +10,24 @@ import {IonicModule} from "@ionic/angular";
   styleUrls: ['./perfil.component.scss'],
   standalone: true,
   imports: [
-    IonicModule
+    IonicModule, CommonModule
   ]
 })
-export class PerfilComponent  implements OnInit {
+export class PerfilComponent implements OnInit {
 
-  constructor() { }
+  datosPerfil: PerfilDatos = new PerfilDatos();
 
-  ngOnInit() {}
+
+  constructor(private perfilService: PerfilService) {
+  }
+
+  ngOnInit() {
+    this.perfilService.getDatosPerfil().subscribe({
+      next: (d) => this.datosPerfil = d,
+      error: (e) => console.error(e),
+      complete: ()=> console.info(this.datosPerfil)
+    })
+
+  }
 
 }

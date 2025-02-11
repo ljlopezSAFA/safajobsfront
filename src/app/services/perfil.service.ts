@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {ComunService} from "./comun.service";
 import {Perfil} from "../modelos/Perfil";
 import {environment} from "../../environments/environment";
+import {PerfilDatos} from "../modelos/PerfilDatos";
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ export class PerfilService {
 
   private perfilAllUrl = '/perfil/all';
   private perfilUrl = '/perfil/id/';
+  private perfilDatosUrl = '/perfil/datos';
   private perfilBuscarUrl = '/perfil/buscar';
   private apiUrl = environment.apiUrl;
 
@@ -21,6 +23,11 @@ export class PerfilService {
   getPerfiles(): Observable<Perfil[]> {
     const options = this.comunService.autorizarPeticion();
     return this.http.get<any>(`${this.apiUrl+this.perfilAllUrl}`, options);
+  }
+
+  getDatosPerfil(): Observable<PerfilDatos> {
+    const options = this.comunService.autorizarPeticion();
+    return this.http.get<any>(`${this.apiUrl+this.perfilDatosUrl}`, options);
   }
 
 

@@ -1,4 +1,3 @@
-
 export class Perfil{
   nombre?:string;
   apellidos?:string;
